@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title>페이지 1</title>
+</head>
+<body>
+  <!-- 상단바 -->
+  <header>
+    <div id="logo">로고</div>
+    <nav>
+      <ul>
+        <li><a href="/">Main</a></li>
+        <li><a href="/festival">축제정보</a></li>
+        <li><a href="/aichat">AI(챗봇)가이드</a></li>
+      </ul>
+    </nav>
+    <div id="login">
+      <a href="/login" id="login-link" >로그인</a>
+    </div>
+  </header>
+
+  <!-- 페이지1 콘텐츠 -->
+  <div id="page1-content">
+    <h1>축제정보</h1>
+    <div id="filters">
+      <!-- 시기 필터 -->
+      <select id="time-filter">
+        <option value="default">모든 축제</option>
+        <option value="ongoing">진행 중</option>
+        <option value="upcoming">예정된</option>
+      </select>
+    
+      <!-- 지역 필터 -->
+      <select id="area-filter">
+        <option value="all">모든 지역</option>
+        <!-- API에서 동적으로 지역 데이터를 추가 -->
+        {% for area in areas %}
+        <option value="{{ area.area_name_kor }}">{{ area.area_name_kor }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <!-- 3x3 박스 배치 -->
+    <div class="box-container" id="festivals-container">
+      {% for festival in festivals %}
+        <h2>{{ festival.title }}</h2> 
+        <p>{{ festival.start_date }}</p> 
+        <p>{{ festival.end_date }}</p>
+        <p>{{ festival.location }}</p> 
+        <img src="{{ festival.image_url }}" alt="{{ festival.title }}" class="festival-image" />
+        <a href="{{ festival.detail_link }}">상세 보기</a>
+      {% endfor %}
+    </div>
+      
+
+    <div id="pagination">
+      {% if page > 1 %}
+        <a href="?page={{ page - 1 }}" class="pagination-button">이전</a>
+      {% endif %}
+    
+      <span>페이지 {{ page }} / {{ total_pages }}</span>
+    
+      {% if page < total_pages %}
+        <a href="?page={{ page + 1 }}" class="pagination-button">다음</a>
+      {% endif %}
+    </div>
+
+  </div>
+  <script src="/static/js/script.js"></script>
+  <script src="/static/js/festival.js"></script>
+</body>
+</html>

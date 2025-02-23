@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title>3->상세</title>
+</head>
+<body>
+  <!-- 상단바 -->
+  <header>
+    <div id="logo">로고</div>
+    <nav>
+      <ul>
+        <li><a href="/">Main</a></li>
+        <li><a href="/festival">축제정보</a></li>
+        <li><a href="/aischedule">Ai 일정추천</a></li>
+        <li><a href="/aichat">AI(챗봇)가이드</a></li>
+      </ul>
+    </nav>
+    <div id="login">
+      <a href="/login" id="login-link" >로그인</a>
+    </div>
+  </header>
+
+  <!-- 페이지 레이아웃 -->
+  <div class="page-layout">
+    <!-- 왼쪽 지도 영역 -->
+    <div class="left-section">
+      <div id="map"></div> <!-- 지도 삽입 -->
+    </div>
+
+    <!-- 오른쪽 자료들 영역 -->
+    <div class="right-section">
+      <div class="right-section-content">
+        <div class="right-section-box">
+          <h3>자료 제목 1</h3>
+          <p>자료 내용 1</p>
+        </div>
+        <div class="right-section-box">
+          <h3>자료 제목 2</h3>
+          <p>자료 내용 2</p>
+        </div>
+        <div class="right-section-box">
+          <h3>자료 제목 3</h3>
+          <p>자료 내용 3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

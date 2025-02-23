@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
+  <title>여행코스 추천</title>
+</head>
+<body>
+  <!-- 상단바 -->
+  <header>
+    <div id="logo">로고</div>
+    <nav>
+      <ul>
+        <li><a href="/">Main</a></li>
+        <li><a href="/festival">축제정보</a></li>
+        <li><a href="/aichat">AI(챗봇)가이드</a></li>
+      </ul>
+    </nav>
+    <div id="login">
+      <a href="/login" id="login-link">로그인</a>
+    </div>
+  </header>
+
+  <!-- 선택지2 페이지 콘텐츠 -->
+  <div id="page2-content">
+      <!-- 각 기간별로 컨테이너 생성 -->
+      <div id="container-day-trip" class="swiper-container-wrapper">
+        <h2>당일치기</h2>
+        <div class="swiper-container" id="swiper-day-trip">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div id="container-overnight" class="swiper-container-wrapper">
+        <h2>1박2일</h2>
+        <div class="swiper-container" id="swiper-overnight">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div id="container-two-nights" class="swiper-container-wrapper">
+        <h2>2박3일</h2>
+        <div class="swiper-container" id="swiper-two-nights">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>    
+  </div>
+  <script src="/static/js/script.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/js/tourScripts.js"></script>
+</body>
+</html>

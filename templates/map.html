@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 일정</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey={KAKAO_API_KEY}&autoload=false" async defer></script>
+    <style>
+         body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        #map-container {
+          width: 100%;
+          height: 500px;
+          margin-top: 20px;
+        }
+        #spot-list {
+          width: 80%;
+          max-width: 800px;
+          margin-top: 20px;
+        }
+        .spot-item {
+          display: flex;
+          align-items: center;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 10px;
+          margin-bottom: 10px;
+          background: #f9f9f9;
+          scroll-margin-top: 20px;
+        }
+        .spot-item img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 5px;
+          margin-right: 15px;
+        }
+        .spot-item a {
+          text-decoration: none;
+          color: blue;
+          font-weight: bold;
+        }
+        .popup {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          z-index: 1000;
+        }
+        .popup-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <h2>지도 및 여행지 정보</h2>
+    <a href="/aischedule">여행 일정 리스트</a>
+    <div id="map-container">
+      <div id="map" style="width:100%;height:100%;"></div>
+    </div>
+    <div id="spot-list"></div>
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup" id="popup">
+        <h3 id="popup-title"></h3>
+        <p id="popup-content"></p>
+        <button onclick="closePopup()">닫기</button>
+    </div>
+    <script src="/static/js/map.js"></script>    
+</body>
+</html>

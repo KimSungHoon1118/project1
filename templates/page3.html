@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title>선택지3</title>
+</head>
+<body>
+  <!-- 상단바 -->
+  <header>
+    <div id="logo">로고</div>
+    <nav>
+      <ul>
+        <li><a href="/">Main</a></li>
+        <li><a href="/festival">축제정보</a></li>
+        <li><a href="/aichat">AI(챗봇)가이드</a></li>
+      </ul>
+    </nav>
+    <div id="login">
+      <a href="/login" id="login-link">로그인</a>
+    </div>
+  </header>
+
+  <!-- 챗봇 대화창과 세로 배너가 포함된 영역 -->
+  <div id="chat-section">
+    <div class="chat-container">
+      <!-- 챗봇 대화창 -->
+      <div class="chat-box">
+        <div class="messages" id="messages">
+          <!-- 채팅 메시지가 여기에 추가됩니다 -->
+          <div class="message-bubble">안녕하세요! 저는 여행 플래너 GPT 챗봇입니다. 여행 계획을 도와드릴게요.<br>
+            여행가이드에 필요한 지역, 일정, 인원수를 입력해주세요 (서울, 1박2일, 3명)
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="text" class="input-field" id="messageInput" placeholder="메시지를 입력하세요...">
+          <button class="send-btn" id="sendBtn">전송</button>
+        </div>
+      </div>
+
+      <!-- 세로 배너 -->
+      <div class="vertical-banner" onclick="window.location.href='/aischedule';">
+        <p>원하는 목적지가 없을 때</p>
+      </div>
+    </div>
+  </div>
+<script src="/static/js/script.js"></script>
+<script src="/static/js/chat.js"></script>
+</body>
+</html>

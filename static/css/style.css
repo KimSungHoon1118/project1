@@ -1,0 +1,528 @@
+/* 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 전체 페이지 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 상단바 스타일 */
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px 30px; 
+  position: sticky; 
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;  
+}
+
+/* 로고 스타일 */
+#logo {
+  font-weight: bold;
+  font-size: 24px;
+  flex-shrink: 0;  
+}
+
+/* 네비게이션 메뉴 스타일 */
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;  
+}
+
+header nav ul li {
+  display: inline-block;  
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 20px 60px;  
+}
+
+header nav ul li a:hover {
+  background-color: #555;
+}
+
+/* 로그인 버튼 스타일 */
+#login {
+  display: flex;
+  align-items: center; 
+}
+
+#login a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;  
+  border-radius: 5px;  
+}
+
+#login a:hover {
+  background-color: #555;
+}
+
+/* 페이지 콘텐츠 스타일 */
+#page1-content, #page2-content {
+  padding: 20px;
+  margin-top: 60px; 
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 3x3 그리드 스타일 (page1에서 박스들) */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  max-width: 900px; /* 최대 너비 설정 */
+  margin: 0 auto;  /* 중앙 정렬 */
+}
+
+.box {
+  background-color: lightgray;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* 페이지 네비게이션 스타일 */
+#pagination {
+  margin-top: 20px;
+  text-align: center; /* 중앙 정렬 */
+}
+
+#pagination a {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#pagination a:hover {
+  background-color: #0056b3;
+}
+
+/* 버튼 스타일 (이전, 다음 버튼) */
+#pagination a:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#pagination span {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+/* 슬라이드 컨테이너 스타일 */
+.slider-container {
+  display: flex;
+  flex-direction: column; 
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: lightgray;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* 버튼 스타일 (슬라이드 버튼) */
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2em;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+/* 각 페이지 사이의 여백 */
+.page {
+  margin-top: 120px;
+}
+
+/* 페이지2 스타일 */
+#page2-content {
+  padding: 20px;
+  margin-top: 60px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 로그인 관련 스타일 */
+.gradient-custom {
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)); /* 요청한 색깔로 변경 */
+}
+
+.login-body {
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* 기존 색깔로 그라디언트 배경 */
+}
+
+.login-card {
+  border-radius: 1rem;
+  width: 400px;
+  padding: 20px;
+  margin: 0 auto; /* 로그인 카드 중앙 정렬 */
+}
+
+.login-btn-primary {
+  background-color: #4CAF50; /* 초록색 버튼 */
+  color: white;
+  border: none;
+  padding: 10px 20px; /* 크기 조정 */
+  font-size: 14px;
+}
+
+.login-btn-secondary {
+  background-color: #007bff; /* 파란색 버튼 */
+  color: white;
+  border: none;
+  padding: 10px 20px; /* 크기 줄이기 */
+  margin-top: 10px; /* 비밀번호 입력란 아래로 이동 */
+  font-size: 14px;
+}
+
+.login-btn-primary:hover,
+.login-btn-secondary:hover {
+  opacity: 0.9; /* 버튼 호버 시 투명도 변경 */
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.festival-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover; /* 비율 유지 */
+  border-radius: 8px; /* 둥근 모서리 */
+}
+
+.swiper-container {
+  padding: 20px; /* 컨테이너 내부 여백 */
+  min-height: auto;
+  background-color: #f9f9f9; /* 배경색 (옵션) */
+  border-radius: 10px; /* 둥근 모서리 (옵션) */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 (옵션) */
+}
+.swiper-container-wrapper {
+  margin-bottom: 50px; /* 컨테이너 사이 간격 조정 */
+}
+.swiper-container-wrapper h2 {
+  margin-bottom: 15px; /* 제목과 슬라이드 간의 간격 */
+  text-align: center;  /* 제목 중앙 정렬 */
+  font-size: 1.5rem;   /* 제목 크기 */
+  color: #333;         /* 제목 색상 */
+}
+
+.swiper-slide {
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.swiper-slide img {
+  width: 300px; /* 이미지 너비 */
+  height: 200px; /* 이미지 높이 */
+  object-fit: cover; /* 이미지 비율 유지 */
+  max-height: 100%; /* 컨테이너 높이 초과 방지 */
+}
+
+@media (max-width: 768px) {
+  .swiper-container {
+    height: 300px; /* 모바일에서 컨테이너 높이 축소 */
+  }
+
+  .swiper-slide img {
+    object-fit: contain; /* 모바일에서 이미지 잘림 방지 */
+  }
+}
+
+.swiper-slide-blank {
+  display: none; /* 빈 슬라이드를 숨김 */
+}
+
+.swiper-pagination {
+  display: none; /* 동그라미를 숨김 */
+}
+
+/* CSS */
+body {
+  overflow-x: hidden; /* 좌우 스크롤 제거 */
+}
+
+.swiper-container {
+  display: none; /* 기본적으로 모든 슬라이드 숨김 */
+}
+
+.swiper-container:first-of-type {
+  display: block; /* 첫 번째 슬라이드만 표시 */
+}
+
+/* 챗봇 레이아웃 관련 스타일 */
+.chat-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  gap: 20px;  /* 대화창과 배너 사이 간격 */
+  margin-top: 100px;  /* 상단바 아래에 여백 추가 */
+}
+
+.chat-box {
+  background-color: #98d2f3;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  height: 800px;  /* 세로 길이 늘리기 */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.chat-box .messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+
+/* 메시지 스타일 */
+.chat-message {
+  margin-bottom: 15px; /* 메시지 간 간격 */
+  clear: both; /* 플로트 해제 */
+}
+
+/* 사용자가 보낸 메시지 오른쪽 정렬 */
+.chat-message.user .message-bubble {
+  background-color: #ffffff;
+  float: right; /* 오른쪽 정렬 */
+  clear: both; /* 플로트 해제 */
+}
+
+/* 챗봇의 답변 왼쪽 정렬 */
+.chat-message.bot .message-bubble {
+  background-color: #ffffff;
+  float: left; /* 왼쪽 정렬 */
+  clear: both; /* 플로트 해제 */
+}
+
+/* 메시지 버블 공통 스타일 */
+.message-bubble {
+  background-color: white;
+  border-radius: 10px;
+  margin: 2px;
+  padding: 10px 15px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+/* 입력 필드와 전송 버튼 스타일 */
+.chat-box .input-container {
+  position: relative;  /* 부모 요소를 relative로 설정하여 버튼의 절대 위치 지정 가능 */
+  width: 100%;  /* 입력창과 버튼이 전체 너비를 사용하도록 설정 */
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.chat-box .input-field {
+  width: 85%;  /* 입력창이 가능한 모든 공간을 차지하도록 설정 */
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;  /* padding이 포함된 너비 계산 */
+}
+
+.chat-box .send-btn {
+  position: absolute;  /* 버튼을 입력창 내부에서 절대 위치로 배치 */
+  right: 10px;  /* 오른쪽에서 10px 떨어지게 배치 */
+  top: 50%;  /* 수직 가운데 정렬 */
+  transform: translateY(-50%);  /* 정확히 수직 가운데로 맞춤 */
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chat-box .send-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/* 세로 배너 스타일 */
+.vertical-banner {
+  background-color: chocolate;
+  color: white;
+  width: 250px;  /* 배너 크기 더 넓게 */
+  height: 100%;  /* 화면 전체 길이 */
+  margin-left: 300px;  /* 오른쪽으로 더 밀기 */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;  /* 클릭할 수 있도록 손 모양 커서 추가 */
+}
+
+.vertical-banner:hover {
+  background-color: #0cec62;  /* 배너 호버 시 색상 변경 */
+}
+
+/* 페이지 전체 레이아웃에 영향 주지 않기 위한 네임스페이스 */
+#chat-section {
+  margin-top: 100px;  /* 상단바와 겹치지 않도록 여백 추가 */
+}
+
+/* 페이지 레이아웃 나누기 */
+.page-layout {
+  display: flex;
+  gap: 20px;  /* 왼쪽과 오른쪽 영역 사이 간격 */
+  margin-top: 100px;  /* 상단바와 겹치지 않도록 여백 추가 */
+}
+
+.left-section {
+  width: 60%;  /* 왼쪽은 전체 가로의 60% 차지 */
+  background-color: #e1e1e1;  /* 배경색 (지도 영역을 구분 짓기 위해) */
+  height: 100vh;  /* 전체 화면 높이 */
+  padding: 20px;
+}
+
+.right-section {
+  width: 35%;  /* 오른쪽은 전체 가로의 35% 차지 */
+  background-color: #f7f7f7;  /* 오른쪽 배경색 */
+  height: 100vh;  /* 전체 화면 높이 */
+  padding: 20px;
+  border-radius: 10px;  /* 모서리 둥글게 */
+}
+
+.left-section, .right-section {
+  box-sizing: border-box;
+  overflow-y: auto;  /* 내용이 넘칠 경우 스크롤 추가 */
+}
+
+/* 지도를 담을 공간의 스타일 */
+#map {
+  width: 100%;
+  height: 80%;  /* 지도 영역은 80% 높이 차지 */
+  background-color: #d3d3d3;  /* 예시 지도 배경색 */
+  border-radius: 10px;
+}
+
+/* 오른쪽 자료들 내용 영역 */
+.right-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  /* 자료들 간 간격 */
+  height: 100%;
+}
+
+/* 각 자료 박스 스타일 */
+.right-section-box {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.right-section-box h3 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.right-section-box p {
+  color: #555;
+  font-size: 1em;
+}
